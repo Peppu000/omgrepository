@@ -18,8 +18,8 @@ jobs:
     steps:
       - checkout
       - add_ssh_keys:
-        fingerprints:
-         - "SHA256:HHVb2cH0pLSaXLYt0Fy2zQb6X+QXrlTcp6/BnRxn8Ko"
+          fingerprints:
+            - "SHA256:HHVb2cH0pLSaXLYt0Fy2zQb6X+QXrlTcp6/BnRxn8Ko"
       - run: cargo test
       - run: cargo build --release
       - store_artifacts:
