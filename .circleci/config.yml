@@ -18,6 +18,9 @@ jobs:
     steps:
       - checkout
       - run: cargo test
+      - run: cargo build --release
+      - store_artifacts:
+          path: target/release/omgrepository
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows

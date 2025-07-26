@@ -1,9 +1,14 @@
 fn main() {
     println!("Hello, world!");
+    let x: i32 = 1;
+    let y: i32 = 1;
+    println!("x = {x}");
+    println!("y = {y}");
+    println!("x + y = {}", add(x, y));
 }
 
 pub fn add(a: i32, b: i32) -> i32 {
-    a + b - a
+    a + b
 }
 
 #[cfg(test)]
