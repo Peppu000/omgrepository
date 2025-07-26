@@ -17,10 +17,14 @@ jobs:
     # See: https://circleci.com/docs/jobs-steps/#steps-overview & https://circleci.com/docs/configuration-reference/#steps
     steps:
       - checkout
+      - add_ssh_keys:
+        fingerprints:
+         - "SHA256:HHVb2cH0pLSaXLYt0Fy2zQb6X+QXrlTcp6/BnRxn8Ko"
       - run: cargo test
       - run: cargo build --release
       - store_artifacts:
           path: target/release/omgrepository
+      - run: sh ./deploy.sh
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
